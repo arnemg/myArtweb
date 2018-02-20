@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="/images/Fri merknad_20131025_001312_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="/images/Notat_20141019_004154_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 10</div>
+      <img src="/images/Notat_20141210_200219_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 10</div>
+      <img src="/images/Notat_20160502_205820_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 10</div>
+      <img src="/images/Notat_20160517_160617_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 10</div>
+      <img src="/images/Notat_20160828_215037_01.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 10</div>
+      <img src="/images/Notat_20170614_220644_01.jpg" >
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">8 / 10</div>
+      <img src="/images/Notat_20170812_164839_01.jpg">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">9 / 10</div>
+      <img src="/images/Notat_20170827_174621_01.jpg">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">10 / 10</div>
+      <img src="/images/Notat_1415918370627_01.jpg">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Fri merknad_20131025_001312_01.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20141019_004154_01.jpg" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20141210_200219_01.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20160502_205820_01.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20160517_160617_01.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20160828_215037_01.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20170614_220644_01.jpg" style="width:100%" onclick="currentSlide(7)" alt="Snowy Mountains">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20170812_164839_01.jpg" style="width:100%" onclick="currentSlide(8)" alt="Snowy Mountains">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_20170827_174621_01.jpg" style="width:100%" onclick="currentSlide(9)" alt="Snowy Mountains">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/thumbs/tn_Notat_1415918370627_01.jpg" style="width:100%" onclick="currentSlide(10)" alt="Snowy Mountains">
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      // Next/previous controls
+      function plusSlides(n) {
+      showSlides(slideIndex += n);
+      }
+
+      // Thumbnail image controls
+      function currentSlide(n) {
+      showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length)
+          {slideIndex = 1}
+        if (n < 1)
+          {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+          }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+</script>
+
+  </body>
+</html>
